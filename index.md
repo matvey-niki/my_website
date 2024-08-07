@@ -10,3 +10,5 @@
 ХЕЛЛО ХЕЛЛО BELERIPGER9I
 ХЕЛЛО ХЕЛЛО BELERIPGER9I
 ХЕЛЛО ХЕЛЛО BELERIPGER9I
+
+[About me](public/about.html)
