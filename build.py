@@ -1,8 +1,14 @@
 import markdown
+import os
 
-data = open("index.md").read()
+with open("templates/template.html") as t:
+    template = t.read()
 
-html_content = markdown.markdown(data)
-
-with open("index.html", "w") as g:
-    g.write(html_content)
+for mdfile in os.scandir("markdown"):
+    if mdfile.is_file():
+        with open(mdfile.path) as f:
+            data = f.read()
+        html_data = markdown.markdown(data)
+        formatted_page = template.replace("%CONTENT%", html_data)
+        with open(f"public/{mdfile.name.removesuffix(".md")}.html", "w") as g:
+            g.write(formatted_page)
